@@ -1,4 +1,5 @@
 ﻿/* Preprocessor directives */
+#define _USE_MATH_DEFINES
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,9 +10,21 @@
 
 #define N 1024*1024 // 
 #define BLOCK_SIZE 512
+#define SIGMA 1
+
 
 __device__ int device_min(int a, int b) {
 	return (a < b) ? a : b;
+}
+
+void gaussian_kernel(float* kernel, int kernel_size, float sigma) {
+    int radius = kernel_size / 2;
+    float sum = 0.0;
+    for (int i = -radius; i < radius; i++) {
+        value = exp(-0.5 * (i * i) / (sigma * sigma)) / (sqrt(2 * M_PI) * sigma)
+        kernel[i + radius] += value;
+        sum += value;
+    }
 }
 
 /* CUDA kernel for convolution */
@@ -51,10 +64,9 @@ int main() {
     srand(time(NULL));
     for (int i = 0; i < inputLength; ++i) {
         inputArray[i] = (float)rand() / RAND_MAX;
-        if (i < kernelLength) {
-            kernelArray[i] = (float)rand() / RAND_MAX;
-        }
+
     }
+    gaussian_kernel(kernelArray, kernelLength, SIGMA);
 
     // Allocate memory on GPU 
     cudaMalloc(&d_inputArray, inputLength * sizeof(float));
