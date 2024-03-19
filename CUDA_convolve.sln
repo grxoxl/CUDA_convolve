@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CUDA_convolve", "CUDA_convolve\CUDA_convolve.vcxproj", "{87484932-6FD5-4F37-986F-4CC7C7648E4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87484932-6FD5-4F37-986F-4CC7C7648E4F}.Debug|x64.ActiveCfg = Debug|x64
+		{87484932-6FD5-4F37-986F-4CC7C7648E4F}.Debug|x64.Build.0 = Debug|x64
+		{87484932-6FD5-4F37-986F-4CC7C7648E4F}.Release|x64.ActiveCfg = Release|x64
+		{87484932-6FD5-4F37-986F-4CC7C7648E4F}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E99F2FD1-14B2-4CFA-BF3A-61AE0070BC95}
+	EndGlobalSection
+EndGlobal
